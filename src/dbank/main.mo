@@ -3,7 +3,7 @@ import Time "mo:base/Time";
 import Float "mo:base/Float"
 actor DBank {
   stable var currentValue:Float = 300;
-  // currentValue := 100;
+  currentValue := 100;
   let id=101010122020121;
   stable var startTime = Time.now();
   Debug.print(debug_show(startTime));
@@ -33,7 +33,7 @@ actor DBank {
     let currentTime = Time.now();
     let timeElapsedNS = currentTime - startTime;
     let timeElapsedS = timeElapsedNS / 1000000000;
-    currentValue := currentValue*(1.01**Float.fromInt(timeElapsedS));
+    currentValue := currentValue*(1.00001**Float.fromInt(timeElapsedS));
     startTime := currentTime;
 
   }
